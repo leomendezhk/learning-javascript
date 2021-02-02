@@ -3,4 +3,4 @@ This repo contains the notes and challenges exercises I do while learning JavaSc
 
 ## FAQ
 ### Why this repository?
-To get myself familiar with the git environment while I begin learning JS; and to keep track of my coding activity.
+To keep track of my coding activity and to get myself familiar with the git environment while I begin learn JS.
