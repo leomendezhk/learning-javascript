@@ -52,6 +52,26 @@ console.log(chinaPopulation3);
 */
 
 /////////////////////////////////////////////////////////////////////
+/*
+//LECTURE: Functions Calling Other Functions
+//2
+function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+//1
+const describePopulation = function(country, population) {
+  const percentage = percentageOfWorld1(population); //2
+  const description =`${country} has ${population} million people, which is about ${percentage} of the world.`;
+  console.log(description);
+}
+
+//3
+describePopulation('China', 1441);
+describePopulation('Argentina', 40);
+describePopulation('Portugal', 33);
+*/
+/////////////////////////////////////////////////////////////////////
+
 
 
 

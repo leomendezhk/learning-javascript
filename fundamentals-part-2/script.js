@@ -85,6 +85,51 @@ console.log(yearUntilRetirement(1998, 'Alan'));
 */
 
 /////////////////////////////////////////////////////////////////////
+/*
+//LECTURE: Calling another Function
+//A function inside another function
+
+const cutFruitPieces = function(fruit) {
+  return fruit * 4;
+}
+
+function fruitProcessor(apples,oranges) {
+  const applesPieces = cutFruitPieces(apples);
+  const orangesPieces = cutFruitPieces(oranges);
+  
+  const juice = `Juice with ${applesPieces} apple pieces and ${orangesPieces} orange pieces.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+*/
+/////////////////////////////////////////////////////////////////////
+/*
+// LECTURE: Reviewing Functions
+// Parameters are like local variables only to it function, even if there is parameters with same name, they are not related
+//return exit the function, so should be place at end
+//Can add if else inside funcion
+
+const calcAge = function(birthYear){
+  return 2021 - birthYear;
+}; 
+
+const yearUntilRetirement = function(birthYear, firstName) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+
+  if (retirement > 0) {
+    console.log(`${firstName} retires in ${retirement} years`);
+    return retirement;
+  } else {
+    console.log(`${firstName} has already retired!`);
+    return -1;
+  }
+}
+
+console.log(yearUntilRetirement(1970, 'Jonas'));
+console.log(yearUntilRetirement(1994, 'Leo'));
+*/
 
 
 
