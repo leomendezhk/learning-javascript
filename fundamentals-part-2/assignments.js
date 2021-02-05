@@ -69,7 +69,7 @@ const describePopulation = function(country, population) {
 describePopulation('China', 1441);
 describePopulation('Argentina', 40);
 describePopulation('Portugal', 33);
-*/
+*/ 
 /////////////////////////////////////////////////////////////////////
 
 
