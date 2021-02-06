@@ -19,6 +19,7 @@ logger();
 
 // Example using parameters apples and oranges
 //Paramenters are like empty spaces or variables that need to be fill with a argument/value
+
 function fruitProcessor(apples, oranges) {
   const juice = `Juice with ${apples} apples and ${oranges} oranges.`; //create variable juice to store the funcion
   return juice;
@@ -50,6 +51,7 @@ console.log(age1);
 
 //Function Expression
 // create a variable to store the fuction
+
 const calcAge2 = function (birthYear) {
   return 2021 - birthYear;
 }
@@ -73,10 +75,10 @@ const age3 = calcAge3(1994);
 console.log(age3);
 
 //Essenario when there is more than one line of code
+
 const yearUntilRetirement = (birthYear, firstName) => {
   const age = 2021 - birthYear; //first calc current age
   const retirement = 65 - age; // then calc retirement
-  // return retirement;
   return `${firstName} retires in ${retirement} years`;
 }
 
@@ -103,7 +105,9 @@ function fruitProcessor(apples,oranges) {
 
 console.log(fruitProcessor(2, 3));
 */
+
 /////////////////////////////////////////////////////////////////////
+
 /*
 // LECTURE: Reviewing Functions
 // Parameters are like local variables only to it function, even if there is parameters with same name, they are not related
@@ -130,6 +134,10 @@ const yearUntilRetirement = function(birthYear, firstName) {
 console.log(yearUntilRetirement(1970, 'Jonas'));
 console.log(yearUntilRetirement(1994, 'Leo'));
 */ 
+
+/////////////////////////////////////////////////////////////////////
+
+
 
 
 
