@@ -137,6 +137,61 @@ console.log(yearUntilRetirement(1994, 'Leo'));
 
 /////////////////////////////////////////////////////////////////////
 
+/*
+//LECTURE: ARRAYS
+//Arrays are like big containers which I can throw variales to later reference them
+
+// How to create an array?
+const friends = ['Michael', 'Leo', 'James'];
+//or
+const year = new Array(1994, 1995, 1996);
+
+//To call it..
+console.log(friends[0]);
+console.log(friends[2]);
+
+// To know how many data is in the array I can use length
+console.log(friends.length);
+//or use it to call as well
+console.log(friends[friends.length -1]); //3 - 1 is 2, 2 is the place of james since arrays count from 0.
+
+// Change or mutate a data of the array.
+friends[0] = 'Basti';
+console.log(friends);
+//I can't change all the data of the array, just selected individual.
+
+// Arrays can take any expression that produces a value (function, operators, strings, another arrays)
+const firstName= 'Leo';// this is a function
+const leo = [firstName, 'Mendez', 2021 - 1994, friends];
+console.log(leo);
+
+//How to use Arrays and Functions?
+//Exercise
+
+//function to calculate age
+const calcAge = function(birthYear) {
+  return 2021 - birthYear; 
+}
+
+//array to place years
+const years = [1990, 1991, 1992, 1993];
+//variable using the function with array as argument
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+//calling results
+console.log(age1, age2, age3);
+
+//another way is taking the call in array (since produce a value)
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+
+//calling the array
+console.log(ages);
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+
 
 
 
