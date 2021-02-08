@@ -110,3 +110,25 @@ console.log(scoreDolphins, scoreKoalas);
 */
 
 /////////////////////////////////////////////////////////////////////
+
+/*
+//LECTURE: Arrays
+
+//1
+const population = [1441, 40, 30, 16];
+//2
+console.log(population.length === 4);
+//3
+function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+const percentages = [
+  percentageOfWorld1(population[0]),
+  percentageOfWorld1(population[1]),
+  percentageOfWorld1(population[2]),
+  percentageOfWorld1(population.length - 1)
+];
+console.log(percentages);
+*/
+
+/////////////////////////////////////////////////////////////////////
