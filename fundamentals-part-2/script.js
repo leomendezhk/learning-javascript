@@ -191,6 +191,7 @@ console.log(ages);
 
 /////////////////////////////////////////////////////////////////////
 
+/*
 //LECTURE: ARRAY METHODS
 //are like array operations basically
 
@@ -226,6 +227,12 @@ console.log(friends.includes('Carlos')); //false
 if (friends.includes('Dima')) {
   console.log(`You have a friend called ${friends[0]}`);
 }
+
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+
 
 
 

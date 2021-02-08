@@ -133,6 +133,7 @@ console.log(percentages);
 
 /////////////////////////////////////////////////////////////////////
 
+/*
 //LECTURE: Array methods
 //1
 const neighbours = ['Uruguay', 'Chile', 'Bolivia'];
@@ -144,7 +145,45 @@ neighbours.pop();
 if (!neighbours.includes('Germany')) {
   console.log('Probably not a central European country :D')
 }
-//
-console.log(neighbours.lastIndexOf('Bolivia'));
-neighbours[2] = 'Brasil';
+//5
+neighbours[neighbours.indexOf('Bolivia')] = 'Brasil';
 console.log(neighbours);
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+/*
+//CODING CHALLENGE #2
+//Steven is still building his tip calculator, using the same rules as before: Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%
+
+
+//1
+const calcTip = function(bill) {
+  // if (bill >= 50 & bill <= 300) {
+  //   return (bill * 15) / 100;
+  // } else {
+  //   return (bill * 20) / 100;
+  // }
+  return bill >= 50 & bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+console.log(calcTip(100));
+
+//2
+const bills = [125, 555, 44];
+
+// 3
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(tips);
+
+//4
+const total = [bills[0] + tips[0] + bills[1] + tips[1] + bills[2] + tips[2]];
+console.log(total);
+
+*/
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
