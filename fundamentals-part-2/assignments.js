@@ -132,3 +132,19 @@ console.log(percentages);
 */
 
 /////////////////////////////////////////////////////////////////////
+
+//LECTURE: Array methods
+//1
+const neighbours = ['Uruguay', 'Chile', 'Bolivia'];
+//2
+neighbours.push('Utopia');
+//3
+neighbours.pop();
+//4
+if (!neighbours.includes('Germany')) {
+  console.log('Probably not a central European country :D')
+}
+//
+console.log(neighbours.lastIndexOf('Bolivia'));
+neighbours[2] = 'Brasil';
+console.log(neighbours);

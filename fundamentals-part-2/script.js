@@ -191,3 +191,43 @@ console.log(ages);
 
 /////////////////////////////////////////////////////////////////////
 
+//LECTURE: ARRAY METHODS
+//are like array operations basically
+
+const friends = ['Dima', 'James', 'Gilly'];
+
+// ADD element
+friends.push('Basti'); //end of array
+// const newFriend = friends.push('Basti'); another way to add is creating a variable to store new modification
+console.log(friends);
+
+friends.unshift('Leo'); //beggining of array
+console.log(friends);
+
+//REMOVE element
+
+friends.pop(); //last element
+console.log(friends);
+const popped = friends.pop(); //remove again last element but I created a variable to store it
+console.log(popped); //show the one removed
+
+friends.shift(); //remove first element
+console.log(friends);
+
+// SHOW position of element
+
+console.log(friends.indexOf('Dima'));
+console.log(friends.indexOf('Carlos')); //not in array so shows -1
+
+//Ask if element is in array
+console.log(friends.includes('Dima'));
+console.log(friends.includes('Carlos')); //false
+
+if (friends.includes('Dima')) {
+  console.log(`You have a friend called ${friends[0]}`);
+}
+
+
+
+
+
