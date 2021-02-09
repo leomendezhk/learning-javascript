@@ -232,6 +232,22 @@ if (friends.includes('Dima')) {
 
 /////////////////////////////////////////////////////////////////////
 
+// LECTURE: Objects
+//Another way to process data. Assigning a Key name to a value.
+//Using curly brackets, colon and coma.
+//Unstructure way, doesnt matter order of data.
+//Can use any expression as value (string, number, function, arrays).
+
+const leo = {
+  firstName: 'Leo',
+  lastName: 'Mendez',
+  age: 2021 - 1994,
+  friends: ['Dima', 'Gilly', 'Fabi']
+}
+
+/////////////////////////////////////////////////////////////////////
+
+// LECTURE: 
 
 
 

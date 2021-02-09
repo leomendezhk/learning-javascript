@@ -184,6 +184,16 @@ console.log(total);
 
 /////////////////////////////////////////////////////////////////////
 
+// LECTURE: Introduction to OBJECTS
+
+//1
+const myCountry = {
+  country: 'Argentina',
+  capital: 'Buenos Aires',
+  language: 'Spanish',
+  population: 40,
+  neighbours: ['Chile', 'Bolivia', 'Brasil']
+}
 
 
 
