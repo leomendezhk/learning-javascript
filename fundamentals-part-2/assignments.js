@@ -184,6 +184,8 @@ console.log(total);
 
 /////////////////////////////////////////////////////////////////////
 
+/*
+
 // LECTURE: Introduction to OBJECTS
 
 //1
@@ -195,5 +197,30 @@ const myCountry = {
   neighbours: ['Chile', 'Bolivia', 'Brasil']
 }
 
+*/
 
+/////////////////////////////////////////////////////////////////////
+/*
 
+// LECTURE: Dot vs. Bracket Notation
+
+const myCountry = {
+  country: 'Argentina',
+  capital: 'Buenos Aires',
+  language: 'Spanish',
+  population: 40,
+  neighbours: ['Chile', 'Bolivia', 'Brasil']
+}
+
+//1
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language} speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`);
+
+//2
+myCountry.population += 2;
+console.log(myCountry.population);
+
+myCountry['population'] -= 2;
+console.log(myCountry.population);
+
+*/
+/////////////////////////////////////////////////////////////////////

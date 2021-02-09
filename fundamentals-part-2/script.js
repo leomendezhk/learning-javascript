@@ -246,8 +246,41 @@ const leo = {
 }
 
 /////////////////////////////////////////////////////////////////////
+/*
 
-// LECTURE: 
+// LECTURE: Dot & Bracket notation
+
+// How to retrieve an object?
+//using dot .
+console.log(leo.firstName);
+
+//or concatonate with brackets
+const keyName = 'Name';
+console.log(leo['first' + keyName]);
+console.log(leo['last' + keyName]);
+
+// by user imput: prompt
+
+// // const interestedIn = prompt(`What do you want to know about Leo? Choose between firstName, lastName, age and friends.`)
+
+// if (leo[interestedIn]) {
+//   console.log(leo[interestedIn]);
+// } else {
+//   console.log(`Wrong request!. Choose between firstName, lastName, age and friends.`)
+// }
+
+//How to add a new property?
+leo.location = 'Hong Kong';
+leo['job'] = 'Model';
+console.log(leo);
+
+// CHALLENGE 
+console.log(`${leo.firstName} has ${leo.friends.length} friends, and his best friend is ${leo.friends[0]}`);
+
+*/
+/////////////////////////////////////////////////////////////////////
+
+
 
 
 
