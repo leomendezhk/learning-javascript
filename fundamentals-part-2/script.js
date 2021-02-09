@@ -238,12 +238,12 @@ if (friends.includes('Dima')) {
 //Unstructure way, doesnt matter order of data.
 //Can use any expression as value (string, number, function, arrays).
 
-const leo = {
-  firstName: 'Leo',
-  lastName: 'Mendez',
-  age: 2021 - 1994,
-  friends: ['Dima', 'Gilly', 'Fabi']
-}
+// const leo = {
+//   firstName: 'Leo',
+//   lastName: 'Mendez',
+//   age: 2021 - 1994,
+//   friends: ['Dima', 'Gilly', 'Fabi']
+// }
 
 /////////////////////////////////////////////////////////////////////
 /*
@@ -269,7 +269,7 @@ console.log(leo['last' + keyName]);
 //   console.log(`Wrong request!. Choose between firstName, lastName, age and friends.`)
 // }
 
-//How to add a new property?
+//How to ADD a new property?
 leo.location = 'Hong Kong';
 leo['job'] = 'Model';
 console.log(leo);
@@ -279,6 +279,41 @@ console.log(`${leo.firstName} has ${leo.friends.length} friends, and his best fr
 
 */
 /////////////////////////////////////////////////////////////////////
+
+// LECTURE: Object Method
+//any function that is attach to an object is called method
+//Using 'this': which is a variable that is equal to the object name.
+//why? so if I change object name I dont need change everywhere.
+
+const leo = {
+  firstName: 'Leo',
+  lastName: 'Mendez',
+  birthYear: 1994,
+  job: 'model',
+  friends: ['Dima', 'Gilly', 'Fabi'],
+  hasDriverLicense: false,
+
+  calcAge: function() {
+    this.age = 2021 - this.birthYear;
+    return this.age;
+  },
+
+  //Challenge
+  getSummary: function() {
+    return `${this.firstName} is a ${this.calcAge()} old ${this.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver license.`;
+  }
+}
+
+console.log(leo.calcAge());
+console.log(leo.age)
+
+//Challenge
+console.log(leo.getSummary())
+
+
+
+
+
 
 
 
