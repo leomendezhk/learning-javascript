@@ -225,3 +225,40 @@ console.log(myCountry.population);
 */
 /////////////////////////////////////////////////////////////////////
 
+//CHALLENGE #3
+
+//1
+const mark = {
+  firstName: 'Mark',
+  lastName: 'Miller',
+  weight: 78,
+  heigh: 1.69,
+
+  //2
+  calcBMI: function() {
+    return this.BMI = this.weight / (this.heigh ** 2);
+  }
+}
+
+const john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  weight: 92,
+  heigh: 1.95,
+
+  //2
+  calcBMI: function() {
+    return this.BMI = this.weight / (this.heigh ** 2);
+  }
+}
+
+console.log(mark.calcBMI(), john.calcBMI());
+
+//3
+if (mark.BMI > john.BMI) {
+  console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.BMI}) is higher than ${john.firstName} ${john.lastName}'s BMI (${john.BMI})`)} else {
+    console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.BMI}) is lower than ${john.firstName} ${john.lastName}'s BMI (${john.BMI})`)
+  } 
+
+
+

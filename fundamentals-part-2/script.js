@@ -279,6 +279,7 @@ console.log(`${leo.firstName} has ${leo.friends.length} friends, and his best fr
 
 */
 /////////////////////////////////////////////////////////////////////
+/*
 
 // LECTURE: Object Method
 //any function that is attach to an object is called method
@@ -310,6 +311,8 @@ console.log(leo.age)
 //Challenge
 console.log(leo.getSummary())
 
+*/
+/////////////////////////////////////////////////////////////////////
 
 
 
