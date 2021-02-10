@@ -224,6 +224,7 @@ console.log(myCountry.population);
 
 */
 /////////////////////////////////////////////////////////////////////
+/*
 
 //CHALLENGE #3
 
@@ -259,6 +260,17 @@ if (mark.BMI > john.BMI) {
   console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.BMI}) is higher than ${john.firstName} ${john.lastName}'s BMI (${john.BMI})`)} else {
     console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.BMI}) is lower than ${john.firstName} ${john.lastName}'s BMI (${john.BMI})`)
   } 
+
+*/
+/////////////////////////////////////////////////////////////////////
+
+//LECTURE: Iteration: The for Loop
+
+//1
+
+for (let vote = 1; vote <= 50; vote++) {
+  console.log(`voter number ${vote} is currently voting`)
+}
 
 
 

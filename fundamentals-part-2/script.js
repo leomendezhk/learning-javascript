@@ -315,6 +315,17 @@ console.log(leo.getSummary())
 /////////////////////////////////////////////////////////////////////
 
 
+//LECTURE: for Loop
+//To repeat a iteration/code
+
+//for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}`)
+}
+
+
+
+
 
 
 
