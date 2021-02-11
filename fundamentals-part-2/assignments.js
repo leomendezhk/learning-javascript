@@ -263,6 +263,7 @@ if (mark.BMI > john.BMI) {
 
 */
 /////////////////////////////////////////////////////////////////////
+/*
 
 //LECTURE: Iteration: The for Loop
 
@@ -271,6 +272,9 @@ if (mark.BMI > john.BMI) {
 for (let vote = 1; vote <= 50; vote++) {
   console.log(`voter number ${vote} is currently voting`)
 }
+
+*/
+/////////////////////////////////////////////////////////////////////
 
 
 

@@ -313,7 +313,7 @@ console.log(leo.getSummary())
 
 */
 /////////////////////////////////////////////////////////////////////
-
+/*
 
 //LECTURE: for Loop
 //To repeat a iteration/code
@@ -323,6 +323,43 @@ for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep}`)
 }
 
+*/
+/////////////////////////////////////////////////////////////////////
+
+// LECTURE: Looping Arrays
+
+const leo = [
+  'Leo',
+  'Mendez',
+  27,
+  ['Dima', 'James', 'Basti']
+]
+
+const types = [] //empty array to be filled
+
+//i is the usual name for variables in loops
+// = 0 because arrays elements counting start from 0 not 1
+
+for (let i = 0; i < leo.length; i++) {
+  console.log(leo[i], typeof leo[i]);
+  
+  // //Filling empty array
+  // types[i] = typeof leo[i];
+  types.push(typeof leo[i]);
+}
+
+console.log(types);
+
+// Challenge: Calculate age using loop
+
+const years = [1994, 1995, 1996, 1997];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2021 - years[i]);
+}
+
+console.log(ages);
 
 
 
