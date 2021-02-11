@@ -325,6 +325,7 @@ for (let rep = 1; rep <= 10; rep++) {
 
 */
 /////////////////////////////////////////////////////////////////////
+/*
 
 // LECTURE: Looping Arrays
 
@@ -332,7 +333,8 @@ const leo = [
   'Leo',
   'Mendez',
   27,
-  ['Dima', 'James', 'Basti']
+  ['Dima', 'James', 'Basti'],
+  'Model'
 ]
 
 const types = [] //empty array to be filled
@@ -360,6 +362,28 @@ for (let i = 0; i < years.length; i++) {
 }
 
 console.log(ages);
+
+//Continue & Break statements for loop
+
+console.log(`---ONLY STRINGS---`);
+for (let i = 0; i < leo.length; i++) {
+  if (typeof leo[i] !== 'string') continue;
+
+  console.log(leo[i], typeof leo[i])
+}
+
+console.log(`---BREAK WITH NUMBER---`);
+for (let i = 0; i < leo.length; i++) {
+  if (typeof leo[i] === 'object') break;
+
+  console.log(leo[i], typeof leo[i]);
+}
+
+*/
+/////////////////////////////////////////////////////////////////////
+
+
+
 
 
 

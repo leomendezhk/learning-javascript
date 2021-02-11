@@ -276,5 +276,32 @@ for (let vote = 1; vote <= 50; vote++) {
 */
 /////////////////////////////////////////////////////////////////////
 
+// LECTURE: Looping Arrays, Breaking and Continuing
 
+//1
+const population = [1441, 40, 30, 16];
+const percentages2 = [];
+//2
+
+//calc using function
+function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+const percentages = [
+  percentageOfWorld1(population[0]),
+  percentageOfWorld1(population[1]),
+  percentageOfWorld1(population[2]),
+  percentageOfWorld1(population.length - 1)
+];
+
+//calc with loop
+for (let i = 0; i < population.length; i++) {
+  percentages2.push((population[i] / 7900) * 100);
+}
+
+
+//3
+//for loop is more efficient way
+console.log(percentages);
+console.log(percentages2)
 
