@@ -275,6 +275,7 @@ for (let vote = 1; vote <= 50; vote++) {
 
 */
 /////////////////////////////////////////////////////////////////////
+/*
 
 // LECTURE: Looping Arrays, Breaking and Continuing
 
@@ -296,12 +297,52 @@ const percentages = [
 
 //calc with loop
 for (let i = 0; i < population.length; i++) {
-  percentages2.push((population[i] / 7900) * 100);
+  const perc = percentageOfWorld(population[i]);
+  percentages2.push(perc)
 }
 
 
 //3
-//for loop is more efficient way
-console.log(percentages);
 console.log(percentages2)
+
+*/
+///////////////////////////////////////////////////////////////////
+/*
+
+// LECTURE: Looping Backwards and Loops in Loops
+//1
+const listOfNeighbours = [
+  ['Canada', 'Mexico'],
+  ['Spain'],
+  ['Norway', 'Sweden','Russia']
+];
+
+//2
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  for (let y = 0; y < listOfNeighbours[i].length ; y++)
+  console.log(`Neighbours: ${listOfNeighbours[i][y]}`);
+}
+
+*/
+///////////////////////////////////////////////////////////////////
+
+// LECTURE: While Loop
+
+//1
+const population = [1441, 40, 30, 16];
+const percentages3 = [] 
+
+function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+
+let i = 0;
+while(i < population.length) {
+  const perc = percentageOfWorld1(population[i]);
+  percentages3.push(perc);
+  i++;
+}
+console.log(percentages3);
+
+
 

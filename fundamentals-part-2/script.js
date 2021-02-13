@@ -381,6 +381,83 @@ for (let i = 0; i < leo.length; i++) {
 
 */
 /////////////////////////////////////////////////////////////////////
+/*
+
+// LECTURE: Looping backwards and loop inside a loop
+
+//Looping Backwards
+const leo = [
+  'Leo',
+  'Mendez',
+  27,
+  ['Dima', 'James', 'Basti'],
+  'Model'
+]
+
+//notice conditions
+for (let i = leo.length-1; i >= 0; i--) {
+  console.log(i, leo[i]);
+}
+
+//Loop inside loop
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`----Exercise number ${exercise}`);
+
+  for (let repetition = 1; repetition < 6; repetition++) {
+    console.log(`repetition number ${repetition}🤸‍♀️`)
+  }
+}
+
+*/
+//////////////////////////////////////////////////////////////////////
+/*
+
+// LECTURE: While Loop
+//while the condition is true, it will run the code.
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+let rep = 1;
+while (rep <= 10) {
+  // console.log(`WHILE: Lifting weights repetition ${rep}`);
+  rep++;
+}
+
+//Example that don't depends on the counter but will depend on the variable
+//Run dice until until is 6. I don't know when 6 will appear, so dont need counter, the loop will stop when the random number is 6.
+
+//Math.random will give a random number between 0 and 1 (using decimals)
+//Math.truc remove the decimal on Math.random
+//* 6 said that the random number will be until 5 (sicne start in 0);
+//+ 1 add 1 so it get to 6
+//basically this create a  variable random number between 0 and 6
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+//this condition check if that number is different than 6, if condition is true, it will run the loop, if number is 6 will not run.
+//create another number so loop dont became infinite and crash browser
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1; //create another number, if this numbr is 6 will stop execute.
+  if (dice === 6) console.log(`Loop is about to end...`)
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
