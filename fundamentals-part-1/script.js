@@ -6,7 +6,7 @@ let $function = '27';
 let person = 'leo';
 let PI = 3.1415; //constant (value doesnt change)
 console.log(myFirstJob); 
-*/ 
+*/
 
 ////////////////////////////////////////////////////////////////////////////
 
