@@ -347,7 +347,7 @@ console.log(percentages3);
 
 */
 ///////////////////////////////////////////////////////////////////
-
+/*
 // CHALLENGE #4
 
 //1
@@ -383,3 +383,4 @@ const calcAverage = function (arr) {
 };
 
 console.log(calcAverage(totals));
+*/
