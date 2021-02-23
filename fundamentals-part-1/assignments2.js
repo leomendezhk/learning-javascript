@@ -129,3 +129,38 @@ const bmiJohn = massJohn / heightJohn ** 2;
 //3
 const markHigherBMI = bmiMark > bmiJohn;
 console.log(markHigherBMI);
+
+//CHALLENGE #2
+//1, 2
+if (bmiMark > bmiJohn) {
+  console.log(`Mark BMI ${bmiMark} is higher than John BMI ${bmiJohn}`);
+} else {
+  console.log(`John BMI is higher than Mark's`);
+}
+
+//CHALLENGE #3
+/*
+Test data:
+§ Data 1: 
+Dolphins score 96, 108 and 89.
+Koalas score 88, 91 and 110
+§ Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+§ Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+*/
+
+//1
+const avgDolphins = (97 + 112 + 101) / 3;
+const avgKoalas = (109 + 95 + 106) / 3;
+console.log(avgDolphins, avgKoalas);
+//2,3,4
+if (avgDolphins > avgKoalas && avgDolphins >= 100) {
+  console.log(`Dolphins wins!`);
+} else if (avgKoalas > avgDolphins && avgKoalas >= 100) {
+  console.log(`Koalas wins!`);
+} else if (
+  avgDolphins === avgKoalas &&
+  avgDolphins >= 100 &&
+  avgKoalas >= 100
+) {
+  console.log(`It's a draw!`);
+}
