@@ -164,3 +164,13 @@ if (avgDolphins > avgKoalas && avgDolphins >= 100) {
 ) {
   console.log(`It's a draw!`);
 }
+
+//CHALLENGE #4
+//1
+let bill = 430;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+//2
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total was ${bill + tip}`
+);
