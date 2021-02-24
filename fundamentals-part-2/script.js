@@ -345,7 +345,7 @@ const types = [] //empty array to be filled
 for (let i = 0; i < leo.length; i++) {
   console.log(leo[i], typeof leo[i]);
   
-  // //Filling empty array
+  // Filling empty array
   // types[i] = typeof leo[i];
   types.push(typeof leo[i]);
 }
