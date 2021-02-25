@@ -286,3 +286,34 @@ console.log(
 );
 
 ////////////////////////////////////////////////////////////////////
+
+//CHALLENGE #4
+//1
+const bills1 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+//2
+const tips1 = [];
+const totals1 = [];
+//3
+
+for (let i = 0; i < bills1.length; i++) {
+  tips1.push(calcTip(bills1[i]));
+  totals1.push(tips1[i] + bills1[i]);
+}
+
+console.log(tips1);
+console.log(totals1);
+
+//4
+
+const calcAverage1 = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // sum = sum + arr[i];
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+
+console.log(calcAverage1(totals1));
+
+///////////////////////////////////////////////////////////////////
