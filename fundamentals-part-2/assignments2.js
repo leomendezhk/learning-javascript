@@ -1,5 +1,6 @@
 'use stric';
 
+/*
 //LECTURE: Functions
 //1
 const describeCountry = function (country, population, capitalCity) {
@@ -206,3 +207,82 @@ while (i < populations1.length) {
 console.log(percentages3);
 
 ///////////////////////////////////////////////////////////////////
+*/
+// Test data:
+// § Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49
+// § Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
+
+// CHALLENGE #1
+//1
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+//2
+const avgDolphins = calcAverage(85, 54, 41);
+const avgKoalas = calcAverage(23, 34, 27);
+//3
+const checkWinners = function () {
+  if (avgDolphins >= avgKoalas * 2) {
+    console.log(`Dolphins wins ${avgDolphins} vs ${avgKoalas}`);
+  } else if (avgKoalas >= avgDolphins * 2) {
+    console.log(`Koalas wins ${avgKoalas} vs ${avgDolphins}`);
+  } else {
+    console.log(`None wins!`);
+  }
+};
+
+//4
+checkWinners();
+
+///////////////////////////////////////////////////////////////////
+
+//CHALLENGE #2
+//1
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+calcTip(100);
+console.log(calcTip(100));
+//2,3
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+
+console.log(tips);
+
+//4
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+console.log(total);
+
+////////////////////////////////////////////////////////////////////
+
+//CHALLENGE #3
+//1, 2
+const mark = {
+  fullName: 'Mark Miller',
+  mass: 78,
+  height: 1.69,
+
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * 2);
+    return this.bmi;
+  },
+};
+
+const john = {
+  fullName: 'John Smith',
+  mass: 92,
+  height: 1.95,
+
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * 2);
+    return this.bmi;
+  },
+};
+
+console.log(
+  `${mark.fullName} BMI (${mark.calcBMI()}) is ${
+    mark.calcBMI() > john.calcBMI() ? 'higher' : 'lower'
+  } than ${john.fullName}'s (${john.calcBMI()}) `
+);
+
+////////////////////////////////////////////////////////////////////
