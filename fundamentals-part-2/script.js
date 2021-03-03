@@ -439,7 +439,7 @@ let dice = Math.trunc(Math.random() * 6) + 1;
 //create another number so loop dont became infinite and crash browser
 while (dice !== 6) {
   console.log(`You rolled a ${dice}`);
-  dice = Math.trunc(Math.random() * 6) + 1; //create another number, if this numbr is 6 will stop execute.
+  dice = Math.trunc(Math.random() * 6) + 1; 
   if (dice === 6) console.log(`Loop is about to end...`)
 }
 
