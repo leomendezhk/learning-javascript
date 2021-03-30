@@ -1,0 +1,14 @@
+body {
+  background-color: #999;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#your-name {
+  background-color: blue;
+  border: 1px solid red;
+  padding: 20px;
+}
+
+.first {
+  color: green;
+}
