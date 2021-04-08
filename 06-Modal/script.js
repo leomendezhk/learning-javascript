@@ -15,9 +15,9 @@ const btnsOpenModal = document.querySelectorAll('.show-modal'); //select multipl
 /////////////////////////////////////////////////////////////////////////////////
 
 //LECTURE: Working with clases
-//Refactoring creating a variables (closeModal, openModal) and storing function in there. Then using it in eventListener.
+//Refactoring creating a variables (closeModal, openModal) and storing function in there. Then using it as argument in eventListener.
 
-//Variable with stored function
+//Variables with stored function
 const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
