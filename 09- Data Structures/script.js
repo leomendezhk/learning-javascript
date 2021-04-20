@@ -37,8 +37,62 @@ const restaurant = {
       `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliver to ${address} at ${time} `
     );
   },
+
+  //Order Pasta function
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Your pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
+// LECTURE: THE SPREAD OPERATOR ...
+const arr = [7, 8, 9];
+const arrBad = [1, 2, arr[0], arr[1], arr[2]];
+console.log(arrBad);
+
+const arrGood = [1, 2, ...arr];
+console.log(...arrGood); //individuals
+console.log(arrGood); //in array
+
+// create new array with added more options
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+//Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+//Join two array
+const twoMenu = [...mainMenuCopy, ...newMenu];
+console.log(twoMenu);
+
+//Iterables: array, string, maps, sets. NOT objects.
+const str = 'Leo';
+const letters = [...str, , '.St'];
+console.log(letters);
+console.log(...str);
+
+//Real world example order pasta
+// const ingredients = [
+//   prompt("Let's make pasta! ingredient 1?"),
+//   prompt('ingredient 2?'),
+//   prompt('ingredient 3?'),
+// ];
+
+// restaurant.orderPasta(...ingredients);
+
+//Objects
+const newRestaurant = {
+  founded: 1994,
+  ...restaurant,
+  founder: 'Carlo Ppepotti',
+};
+console.log(newRestaurant);
+newRestaurant.name = 'Las Cholas';
+console.log(newRestaurant.name);
+console.log(restaurant.name);
+
+///////////////////////////////////////////////////////////
+/*
 //calling function objects
 restaurant.orderDelivery({
   time: '23:30',
@@ -85,6 +139,7 @@ const {
 } = openingHours;
 console.log(open, close);
 
+*/
 ///////////////////////////////////////////////////////////
 /*
 // LECTURE: Destructuring Arrays
