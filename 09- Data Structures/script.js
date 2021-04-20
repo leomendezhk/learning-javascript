@@ -25,8 +25,67 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  //function with object as argument
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 1,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliver to ${address} at ${time} `
+    );
+  },
 };
 
+//calling function objects
+restaurant.orderDelivery({
+  time: '23:30',
+  address: 'Via del Sole 351',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+//calling Using default values
+restaurant.orderDelivery({
+  address: 'Via del Sole 351',
+  starterIndex: 1,
+});
+
+// LECTURE: DESTRUCTURING OBJECTS
+//Specific name, doest matter order and use curly brace
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+//changing name variables
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+//Setting defaul values
+const { menu = [], starterMenu = (starters = []) } = restaurant;
+console.log(menu, starterMenu);
+
+//Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 1 };
+({ a, b } = obj); //use parentesis to avoid error
+console.log(a, b);
+
+//Nested Objects
+
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
+
+///////////////////////////////////////////////////////////
 /*
 // LECTURE: Destructuring Arrays
 //breakdown complex data into small variables.
