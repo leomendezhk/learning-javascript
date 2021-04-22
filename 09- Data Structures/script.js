@@ -42,8 +42,81 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Your pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
+// LECTURE: REST PATTERN & REST PARAMETERS
+
+//rest goes on the left of = , and spread on the right.
+//rest is always the last value and doesnt count skipped elements
+
+const [pizza, , rissoto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, rissoto, otherFood);
+
+//Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+//Functions REST
+//take multiple values and packet into arrays
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(1, 2, 3);
+add(4, 1, 2, 5, 6, 7);
+add(1, 2, 2, 3, 5, 7, 8, 9);
+
+const x = [2, 3, 4];
+add(...x);
+
+restaurant.orderPizza('mushroom', 'tomato', 'pineapple', 'spinach');
+restaurant.orderPizza('mushroom'); //empty array for other argument
+
+//////////////////////////////////////////////////////////////////////////
+
+//LECTURE: SHORT-CIRCUITING
+
+//or ||
+
+//Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(undefined || null);
+
+// restaurant.numGuests = 24;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+//or use short-circuiting instead
+const guest2 = restaurant.numGuests || 23;
+console.log(guest2);
+
+//AND &&
+//shows the falsy value or the last true value if all values are true
+
+console.log(3 && 'Leo');
+console.log(null && 2);
+console.log(23 && 'hello' && '' && undefined);
+
+//Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'spinach');
+}
+//easier way to check if exist and order
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
+
+//////////////////////////////////////////////////////////////////////////
+/*
 // LECTURE: THE SPREAD OPERATOR ...
 const arr = [7, 8, 9];
 const arrBad = [1, 2, arr[0], arr[1], arr[2]];
@@ -90,6 +163,7 @@ console.log(newRestaurant);
 newRestaurant.name = 'Las Cholas';
 console.log(newRestaurant.name);
 console.log(restaurant.name);
+*/
 
 ///////////////////////////////////////////////////////////
 /*
