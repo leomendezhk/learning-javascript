@@ -49,6 +49,18 @@ const restaurant = {
   },
 };
 
+//LECTURE: NULLISH ??
+//consider only null or undefines (NOT '' or 0)
+//only if value is null or undefined it continues
+//in the example the evaluation is 0, so return 0. if it were undefined it will return 10
+
+restaurant.numGuests = 0;
+const guest2 = restaurant.numGuests ?? 10;
+console.log(guest2);
+
+/////////////////////////////////////////////////////////////////////
+/*
+
 // LECTURE: REST PATTERN & REST PARAMETERS
 
 //rest goes on the left of = , and spread on the right.
@@ -82,14 +94,17 @@ add(...x);
 
 restaurant.orderPizza('mushroom', 'tomato', 'pineapple', 'spinach');
 restaurant.orderPizza('mushroom'); //empty array for other argument
+*/
 
-//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
+/*
 //LECTURE: SHORT-CIRCUITING
 
 //or ||
 
 //Use ANY data type, return ANY data type, short-circuiting
+//returm first true value 
 console.log(3 || 'Jonas');
 console.log('' || 'Jonas');
 console.log(undefined || null);
@@ -102,7 +117,7 @@ const guest2 = restaurant.numGuests || 23;
 console.log(guest2);
 
 //AND &&
-//shows the falsy value or the last true value if all values are true
+//return the falsy value or the last true value if all values are true
 
 console.log(3 && 'Leo');
 console.log(null && 2);
@@ -115,6 +130,7 @@ if (restaurant.orderPizza) {
 //easier way to check if exist and order
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
 
+*/
 //////////////////////////////////////////////////////////////////////////
 /*
 // LECTURE: THE SPREAD OPERATOR ...
