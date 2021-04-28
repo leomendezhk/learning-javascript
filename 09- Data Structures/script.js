@@ -14,7 +14,7 @@ const restaurant = {
 };
 
 /*  
-//LECTURE: DESTRUCTURING ARRAYS 
+//LECTURE: DESTRUCTURING ARRAYS.
 
 
 //Destructuring is to break a complex data structure from an array or an object into separate variables.
