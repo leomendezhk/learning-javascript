@@ -12,7 +12,7 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 };
-
+gg;
 /*  
 //LECTURE: DESTRUCTURING ARRAYS 
 
