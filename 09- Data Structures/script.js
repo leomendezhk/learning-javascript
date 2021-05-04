@@ -7,15 +7,116 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+
   //Creater a method that return an array with the value at position given (index).
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  // Destructuring Object inside the argument of a function. Using {}
+  //Funtion that recieves a delivery order
+  // Why? It make it really use for the user to use the specific names of the arguments on the return of the funtion as I do now with the console.log giving a message.
+  //Can set default values on the argument using =
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received!: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliver to ${address} at ${time}`
+    );
+  },
+
+  //Function order pasta with ingredients from user prompt
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2} and ${ing3}`);
+  },
 };
 
-/*  
-//LECTURE: DESTRUCTURING ARRAYS.
+//Calling function with an Object containing the data of the delivery order. Using {}.
+//And since its an object, I can destructure directly on the argument.
+restaurant.orderDelivery({
+  time: '23:30',
+  address: 'Via del sone 351',
+  mainIndex: 2,
+  starterIndex: 0,
+});
 
+//Calling the order function without specify some values so the function will use the default ones.
+restaurant.orderDelivery({
+  address: 'Via del sone 351',
+  mainIndex: 3,
+});
+
+//LECURE: DESTRUCTURING OBJECTS.{}
+
+//Variable names has to mach the exactly name of property object to destructure.
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+//////////////////////////////////////////////////////////////
+
+//CHANGE NAME VARIABLES
+
+//Using : can change name of the variable. It's useful when dealing with third party data.
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+////////////////////////////////////////////////////////////////
+
+//ADD DEFAULT VALUES
+
+//Add default values using =. Useful when getting data that I don't know the value.
+//in this case the default value is an empty array
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+///////////////////////////////////////////////////////////////
+
+//MUTATING VARIABLES IN OBJECTS
+
+let a = 99;
+let b = 88;
+const obj = { a: 23, b: 7, c: 12 };
+console.log(a, b); //99 88
+
+//to mutate use ()
+({ a, b } = obj);
+console.log(a, b); //23 7
+
+///////////////////////////////////////////////////////////////////
+
+//DESTRUCTURE NESTED OBJECTS
+// using : and the exact property names of the object inside {}
+
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close); //11 23
+
+///////////////////////////////////////////////////////////////
+
+/*  
+//LECTURE: DESTRUCTURING ARRAYS.  []
 
 //Destructuring is to break a complex data structure from an array or an object into separate variables.
 //For arrays we use destructurig to retrieve elements from the array and store it into smaller variables.
@@ -78,3 +179,93 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r); //8 9 1 
 
 */
+
+//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+//LECTURE: THE SPREAD OPERATOR ... IN ARRAY
+//To basicly expand an array in all it's elements
+
+//new array without using spread operator. Have to write each position manually.
+const arr = [3, 4, 5];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr); //[1, 2, 3, 4, 5]
+
+//using spread operator ... It unpack the array for me.
+const newArr = [1, 2, ...arr];
+console.log(newArr); //[1, 2, 3, 4, 5]
+
+/////////////////////////////////////////////////////////
+
+//The other useful of the spread operator is when need to pass arguments into functions
+//Using the spread operator it shows each element individually rather that in a array pack.
+console.log(...newArr); //1 2 3 4 5
+console.log(1, 2, 3, 4, 5);
+
+console.log(newArr); // [1, 2, 3, 4, 5]
+
+//EXAMPLE of need individual element rather than array pack.
+//Create a new menu for the resturant.
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu); //creates ONE array with all elements indivually
+
+const badMenu = [restaurant.mainMenu, 'Gnocci'];
+console.log(badMenu); //creates ONE array with onother array and one elements
+
+////////////////////////////////////////////////////////////
+
+//Other useful of spread operator is to CREATE EXACTLY COPY OF AN ARRAY
+
+const menuCopy = [...restaurant.mainMenu];
+
+////////////////////////////////////////////////////////////
+
+//or JOIN TWO ARRAYS
+
+const fullMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+////////////////////////////////////////////////////////////
+
+//ITERABLES. the Spread operator works in all iterables not only arrays.
+//arrays, strings, maps, sets. NOT objects.
+
+//SPREAD OPERATOR IN STRING.
+//spread each letter of the word as individual element.
+
+const str = 'Leo';
+const letters = [...str, '', '.M'];
+console.log(letters); //[L, e, o, ,.M]
+
+//////////////////////////////////////////////////////////////
+
+//FUNCTION USING SPREAD OPERATOR AS ARGUMENT
+
+//get ingredients from promp windows
+// const ingredients = [
+//   prompt(`Let's make pasta!: Ingredient 1`),
+//   prompt(`Ingredient 2?`),
+//   prompt(`Ingredient 3?`),
+// ];
+
+//Call the function
+
+//Old way.
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+//Using spread operator
+// restaurant.orderPasta(...ingredients);
+
+//////////////////////////////////////////////////////////////////
+
+//CREATE A NEW OBJECT FROM AN OBJECT USING SPREAD OPERATOR
+
+const newRestaurant = { foundedIn: 1994, ...restaurant, owner: 'Giuseppe' };
+console.log(newRestaurant);
+
+////////////////////////////////////////////////////////////////
+
+//CLONING AN OBJECT AND CHANGING VALUE
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristoranti Roma';
+
+//////////////////////////////////////////////////////////////
