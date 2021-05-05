@@ -46,7 +46,120 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your pasta with ${ing1}, ${ing2} and ${ing3}`);
   },
+
+  //Using REST in a function method
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
+
+//LECTUR: NULLISH COALESCING OPERATOR
+//works with the idea of nullish values instead of falsy values
+//not consider null or undefined. but include 0 or ''
+restaurant.guestNum = 0;
+const guest1 = restaurant.guestNum || 23; //23
+const guest = restaurant.guestNum ?? 10; // 0 . consider falsy values.
+console.log(guest);
+
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+/*
+
+//LECURE: SHORT-CIRCUITING || &&
+//use any data type, return any data type and can do short circuiting
+
+// || (or operator)
+//if the first value is a trusty value inmediatly will return the first one. Won't even look the second value.
+console.log(3 || 'Leo'); //3
+console.log('' || 'Leo'); // Leo
+console.log(undefined || null); //null
+console.log(undefined || 0 || '' || 'hello' || 23); //hello
+
+//Another example. Checking guest of the restaurant
+// restaurant.guestNumber = 10;
+
+// using ternary
+const guest = restaurant.guestNumber ? restaurant.guestNumber : 23;
+
+//using short circuiting, better.
+const guest1 = restaurant.guestNumber || 23;
+console.log(guest1);
+
+/////////////////////////////////////////////////////////////////////
+
+//AND OPERATOR &&
+//the && operator short circuit with the first falsy value
+console.log(0 && 'Jonas'); // 0
+console.log(7 && 'Jonas'); // Jonas . Since borth are true, will show last value of the evaluation.
+
+//Another practical example
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'tomato', 'spinach');
+}
+
+////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+/*
+
+//LECTURE: REST PATERNS AND PARAMETERS
+//It collects remaining multiple elements and condenced in one array.
+
+//REST because it's on the left of =
+const [a, b, ...others] = [1, 2, [3, 4, 5]];
+console.log(a, b, others);
+
+//Another example
+//using Rest and spread operator
+
+const [pizza, , rissotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, rissotto, otherFood);
+
+///////////////////////////////////////////////////////////
+
+//REST ALSO WORK IN OBJECTS
+
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays); // will take thu and fri, because already extract sat in its own variable.
+
+////////////////////////////////////////////////////////////
+
+//USING REST IN FUNCTION
+//using rest operator as an argument to collect many given values and pack it into one array
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+//given values
+add(1, 2);
+add(4, 5, 6, 7, 8);
+add(7, 3, 2, 5, 6, 7, 8, 2, 1);
+
+//given value spreading a variable
+const x = [2, 3, 4, 1];
+add(...x);
+
+//////////////////////////////////////////////////////
+
+//Ordering Pizza for a function method
+
+restaurant.orderPizza('mushroom', 'olives', 'tomato', 'spinach');
+
+//////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
+/*
 
 //Calling function with an Object containing the data of the delivery order. Using {}.
 //And since its an object, I can destructure directly on the argument.
@@ -183,6 +296,8 @@ console.log(p, q, r); //8 9 1
 //////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 
+/*
+
 //LECTURE: THE SPREAD OPERATOR ... IN ARRAY
 //To basicly expand an array in all it's elements
 
@@ -269,3 +384,5 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristoranti Roma';
 
 //////////////////////////////////////////////////////////////
+
+*/
