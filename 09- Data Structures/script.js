@@ -1,5 +1,8 @@
 'use strict';
 
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/*
 const weekdays = ['mon', 'tue', 'wed', 'thu'];
 const openingHours = {
   [weekdays[3]]: {
@@ -53,6 +56,39 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//LECTURE: Looping objects keys, values and entries
+
+//Objects keys
+//keys are the property names inside the object
+
+const properties = Object.keys(openingHours);
+
+let openSrt = `We are open on ${properties.length} days: `;
+for (const day of properties) {
+  openSrt += `${day}, `;
+}
+console.log(openSrt);
+
+///////////////////////////////////////////////////
+
+//Property Values
+const values = Object.values(openingHours);
+console.log(values);
+
+//Property entries (its key + value)
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+//[key,values]
+//destructuring values to create string
+
+
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
 
 ////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
