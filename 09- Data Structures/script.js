@@ -1,5 +1,112 @@
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  //Enhanced objects literal ES6
+  //can add objects from outside, can compute property names, and no need to write function in the methods.
+  openingHours,
+
+  //Creater a method that return an array with the value at position given (index).
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // Destructuring Object inside the argument of a function. Using {}
+  //Funtion that recieves a delivery order
+  // Why? It make it really use for the user to use the specific names of the arguments on the return of the funtion as I do now with the console.log giving a message.
+  //Can set default values on the argument using =
+  orderDelivery({ starterIndex = 1, mainIndex, time = '20:00', address }) {
+    console.log(
+      `Order received!: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be deliver to ${address} at ${time}`
+    );
+  },
+
+  //Function order pasta with ingredients from user prompt
+  orderPasta(ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2} and ${ing3}`);
+  },
+
+  //Using REST in a function method
+  orderPizza(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+
+////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/*
+//LECTURE: Optional Chaining
+//check if a property exist before continue code. This avoid error and return undefined instead
+
+console.log(restaurant.openingHours?.mon?.open); //undefined
+
+//Example using nullish (??) and optional chainig (?)
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`on ${day} is open at ${open}`);
+}
+
+/////////////////////////////////////////////////////
+
+//in Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderMenu?.(0, 1) ?? 'Method does not exist');
+
+//////////////////////////////////////////////////
+
+//in Arrays
+const users = [{ name: 'Jonas', email: 'jonas@mail.io' }];
+console.log(users[0]?.name ?? 'Array is empty');
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/*
+//LECTURE: FOR OF LOOP
+//looping an array. Give the current elements of the array
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+for (const item of menu) console.log(item);
+
+//to show index(position of element) of array
+for (const item of menu.entries()) {
+  console.log(item);
+}
+
+//and since item is an array, we can destructure it
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1} : ${el}`);
+}
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/*
 //CHALLENGE #1
 const game = {
   team1: 'Bayern Munich',
