@@ -1,5 +1,81 @@
 'use strict';
 
+//LECTURE: MAPS ITERATION
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+};
+
+//To add multiple elements to a Map better than use set, I can use Array of arrays
+
+//Example creating a quiz game
+
+const question = new Map([
+  ['question', 'What the best programming language for web?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Corrent 🎉'],
+  [false, 'Try again!'],
+]);
+
+console.log(question);
+
+////////////////////////////////////////////////////
+
+//Convert Object to Maps
+
+console.log(Object.entries(restaurant.openingHours));
+const hoursMap = new Map(Object.entries(restaurant.openingHours));
+
+console.log(hoursMap);
+
+////////////////////////////////////////////////////
+
+//Quiz app
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+// const answer = Number(prompt('Your answer:'));
+const answer = 3;
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+/////////////////////////////////////////////////////
+
+//Convert map to array
+
+console.log([...question]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
+
+//////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+/*
 //LECTURE: MAPS
 //It's a data structure that link/map values to keys.
 //Can use any data type. Not like Object that only use strings.
@@ -456,6 +532,7 @@ restaurant.guestNum = 0;
 const guest1 = restaurant.guestNum || 23; //23
 const guest = restaurant.guestNum ?? 10; // 0 . consider falsy values.
 console.log(guest);
+
 
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
