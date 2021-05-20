@@ -1,5 +1,57 @@
 'use strict';
 
+//LECTURE: MAPS
+//It's a data structure that link/map values to keys.
+//Can use any data type. Not like Object that only use strings.
+
+const rest = new Map(); // best use it empty.
+
+rest.set('name', 'Clasico Italiano');
+rest.set(1, 'Spain');
+console.log(rest.set(2, 'Portugal')); //return the full map
+
+//It can be chained
+rest
+  .set('open', 11)
+  .set('close', 23)
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+//////////////////////////////////////////////////////
+//Use get to read data
+
+console.log(rest.get('name'));
+// console.log(rest.get(true));
+
+//Example: using current time to ask if its open or closed
+
+const time = 20; //current time
+console.log(rest.get(time > rest.get('open') && time < rest.get('close'))); // = rest.get(boolean)
+
+///////////////////////////////////////////////////
+
+//Maps methods
+
+console.log(rest.has('categories'));
+rest.delete(2);
+// rest.clear();
+console.log(rest.size);
+console.log(rest);
+
+////////////////////////////////////////////////
+
+//Using ARRAY and OBJECTS in MAPS
+
+const arr = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest.get(arr));
+
+rest.set(document.querySelector('h1'), 'Heading');
+
+//////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+/*
 // LECTURE: SETS
 //It's a collection of unique values.
 //It's a iterable (can be used for looping and contain other iterables )
@@ -47,7 +99,8 @@ console.log(
   new Set(['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
 );
 
-//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 
 /*
 //CHALLENGE #2
