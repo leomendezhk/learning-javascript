@@ -1,5 +1,127 @@
 'use strict';
 
+// LECTURE: SETS
+//It's a collection of unique values.
+//It's a iterable (can be used for looping and contain other iterables )
+//Set can never have duplicated. It delete the duplicates.
+//Cannot retrieve index or values out of a set.
+//The order is irrelevant.
+
+const ordersSet = new Set([
+  'Pizza',
+  'Tomato',
+  'Garlic Bread',
+  'Pizza',
+  'Pizza',
+  'Rissoto',
+]);
+
+console.log(ordersSet); //remove duplicates
+console.log(new Set('Leo')); //can create set of string or any iterable.
+console.log(ordersSet.size); //know the lenght
+console.log(ordersSet.has('Rissoto')); //can ask if has value
+ordersSet.delete('Tomato');
+ordersSet.add('Lasagna');
+ordersSet.add('Lasagna');
+// ordersSet.clear() //delette all values.
+console.log(ordersSet);
+
+////////////////////////////////////////////////////
+
+//Can use looping
+for (const order of ordersSet) console.log(order);
+
+///////////////////////////////////////////////////
+
+//The main use of SETS is to remove duplicates of Arrays.
+
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+const uniqueStaff = [...new Set(staff)]; //convert ir into array with spread operator + []
+console.log(uniqueStaff);
+
+/////////////////////////////////////////////////////
+
+//If I want to know how many unique values are I could use size
+
+console.log(
+  new Set(['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
+);
+
+//////////////////////////////////////////////////////////
+
+/*
+//CHALLENGE #2
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
+}
+
+//2
+const odds = Object.values(game.odds);
+
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
+
+//3
+
+for (const [team, odds] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odds}`);
+}
+
+//4
+const scorers = {
+  [game.scored[1]]: 1,
+  [game.scored[3]]: 1,
+  [game.scored[0]]: 2,
+};
+
+console.log(scorers);
+
 ///////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
 /*
