@@ -1,5 +1,117 @@
 'use strict';
 
+//LECTURE: WORKING WITH STRINGS
+//Methods
+
+const airplane = '311A Air Portugal';
+
+console.log(airplane[0]);
+console.log(airplane.length);
+console.log(airplane.indexOf('r')); //check first r
+console.log(airplane.lastIndexOf('r')); //check the last r
+console.log(airplane.slice(5)); //slice from 5
+console.log(airplane.slice(5, 8)); //slice from 5 to 8. 8-5 3charc
+console.log(airplane.slice(-1)); //slice from last charc
+
+console.log(airplane.slice(airplane.indexOf('P')));
+console.log(airplane.slice(airplane.indexOf('P'), -3));
+console.log(airplane.slice(airplane.lastIndexOf('A')));
+
+const checkMiddleSeat = function (seat) {
+  //middle seat is B or E
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got middle seat');
+  else console.log('You got side seat');
+};
+
+checkMiddleSeat('311A');
+checkMiddleSeat('311B');
+checkMiddleSeat('311D');
+
+//JS behing scenes. Why can use methods in strings?
+//Because JS convert it to object.
+
+console.log(typeof new String('airplane'));
+
+////////////////////////////////////////////////////////////
+
+//FIX Capitalization
+
+const passenger = 'jOnAS';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+const nameCorrection = function (passenger) {
+  const a = passenger.toLowerCase();
+  console.log(a[0].toUpperCase() + a.slice(1));
+};
+
+nameCorrection('LeO');
+nameCorrection('JoSEle');
+nameCorrection('jUdanOR');
+
+////////////////////////////////////////////////////////////////
+
+//Normalazing email
+
+const emailGood = 'leo@mail.io';
+const emailBad = '  Leo@Mail.iO   ';
+const normalizeEmail = emailBad.toLowerCase().trim();
+
+console.log(emailGood === normalizeEmail);
+
+///////////////////////////////////////////////////////////
+
+//Replace string
+
+const priceGB = '234,98£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+//It only reemplace the first word. Use replaceAll.
+const airportAnnunce =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(airportAnnunce.replaceAll('door', 'gate'));
+
+//Other option is Regular Expression
+console.log(airportAnnunce.replace(/door/g, 'gate'));
+
+////////////////////////////////////////////////////////////////
+
+//Booleans
+//Good to use to check the string on conditional
+
+const plane = 'Airplane A324eon';
+console.log(plane.includes('32'));
+console.log(plane.startsWith('Aid'));
+
+if (plane.startsWith('Air') && plane.endsWith('eon')) {
+  console.log('This is the new airplane');
+}
+
+/////////////////////////////////////////////////////////////
+
+//Practical exercise
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You cannot come on board!');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a KniFe and a camera');
+checkBaggage('I have some snacks and laptop');
+checkBaggage('I have a gun for protection');
+
+////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+/*
 //CHALLENGE #2
 
 const gameEvents = new Map([
