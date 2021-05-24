@@ -109,6 +109,72 @@ checkBaggage('I have a KniFe and a camera');
 checkBaggage('I have some snacks and laptop');
 checkBaggage('I have a gun for protection');
 
+///////////////////////////////////////////////////////////////
+
+//SPLIT AND JOIN
+//Split convert into an Array
+//join add each element of array into a string separated by separator
+
+console.log('have+a+very+nice+day'.split('+'));
+console.log('Leo Mendez'.split(' '));
+
+const [firstName, lastName] = 'Leo Mendez'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+//////////////////////////////////////////////////////////////
+
+//Practical exercise
+
+const capitalizaNewName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+
+  console.log(namesUpper.join(' '));
+};
+
+capitalizaNewName('jessica anne davis coperfield');
+
+/////////////////////////////////////////////////////////////////
+
+// PADDING A STRING
+//add a number of character to a string until the string has certain desired lenght
+
+const message = 'Go to gate 25';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+
+const maskCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCard(84736583));
+
+///////////////////////////////////////////////////////////////
+
+//REPEAT METHOD
+//allow us to repeat the string multiple times
+
+const message2 = 'All departures delayed';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There is ${n} planes waiting  ${'✈'.repeat(n)} `);
+};
+
+planesInLine(5);
+planesInLine(2);
+planesInLine(12);
+
+/////////////////////////////////////////////////////////
+
 ////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 /*
