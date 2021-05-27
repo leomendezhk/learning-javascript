@@ -79,7 +79,7 @@ checkIn(flight, jonas); //calling old function same object.
 
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
-
+/*
 //LECTURE 4: Function Accepting Callback Function
 
 const oneWord = function (str) {
@@ -133,7 +133,7 @@ greet('Hello')('Leo');
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
 greetArr('Hi')('Leo');
-
+*/
 ////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
 
@@ -193,3 +193,60 @@ book.call(swiss, ...flightData); //another option
 
 //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
+
+//LECTURE: THE BIND METHOD
+//Works same as call method but instead of call the function. It return a new function with the pointed 'this'
+
+const bookEW = book.bind(eurowings); //created a new function
+bookEW(232, 'Steven Williams'); //now I can call it with the data of new books
+
+//call do the same for the others airlines
+
+const bookLH = book.bind(lufthansa);
+bookLH(232, 'Jose Joseles');
+
+//I can event go further and preset the other data left like flightNum. 'Partial application' (part of the app is already apply).
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Claudia Naora');
+
+///////////////////////////////////////////////////
+
+//With Add Event Listener
+
+lufthansa.planes = 300; //add a new object element to lufthansa
+lufthansa.buyPlane = function () {
+  this.planes++;
+  console.log(lufthansa.planes);
+};
+
+//added bind because I need it to point where 'this' goes and a need it a new function not call a function.(not call)
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+//////////////////////////////////////////////////////////
+
+//Partial Application
+//Sometimes I can use bind method just to preset some value not for the this.
+
+const addTAX = (rate, value) => value + value * rate;
+console.log(addTAX(0.1, 200));
+
+//since i dont need this i put null, and then define rate.
+const addVAT = addTAX.bind(null, 0.23);
+console.log(addVAT(200));
+
+////////////////////////////////////////////////////////
+
+//Exercise: rewrite past function but the function calling the function.
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const Vat2 = addTaxRate(0.23);
+
+console.log(Vat2(200));
